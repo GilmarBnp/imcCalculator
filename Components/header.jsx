@@ -21,18 +21,20 @@ const styles = StyleSheet.create({
     },
     imcContainer: {
       textAlign:'center',
-      height: 20,
+   
       alignItems: 'center',
       justifyContent: 'center',
     },
     imcText: {
+     
       textAlign:'center',
-      padding: 10,
-      height:60,
+      paddingTop:50,
+      padding: 20,
+      height:100,
       fontWeight:'600',
       fontSize: 25,
       color:'white',
-      backgroundColor:'#0E347B',
+      backgroundColor:'#F39E49',
     },
     text: {
       textAlign:'center',

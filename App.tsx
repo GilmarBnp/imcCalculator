@@ -85,22 +85,22 @@ const App = () => {
   return (
 
     <SafeAreaView>
-       <IMC/>  
+      
      <View style={styles.container}> 
-     {result && (
+     <IMC/>  
+      <View style={styles.container2} >
+     
+        <View style={styles.containerInfo}>
+        {result && (
           <Text style={styles.result}>O seu IMC está: {result}</Text>
         )}
          {!result && (
           <Text style={styles.result}></Text>
         )}
-      <View style={styles.container2} >
-       
-        <View style={styles.containerInfo}>
-        <Text style={styles.resultInfo}>{info}</Text>
         
-       
-       
         </View>
+
+        <Text style={styles.resultInfo}>{info}</Text>
         <View style={styles.containerImg}>
         {chart === 0 && (
           <Image source={require("./assets/imcBar.jpg")} style={styles.imageImc} />
@@ -124,7 +124,10 @@ const App = () => {
           <Image source={require("./assets/imcBarSetaObesidadeMorbida.jpg")} style={styles.imageImc} />
         )} 
         </View> 
-        <View style={styles.container3}>
+        
+        
+    </View>
+    <View style={styles.container3}>
         <Text style={styles.text}>Digite a sua altura:</Text>
         <TextInput
           keyboardType='number-pad'
@@ -142,10 +145,6 @@ const App = () => {
           placeholder='Ex: 60'
         />
         </View>
-        
-       
-   
-    </View>
         <TouchableOpacity onPress={handleCalc} style={styles.button} >
           <Text style={styles.textButton}>Calcular</Text>
        </TouchableOpacity >  
@@ -157,18 +156,21 @@ const App = () => {
 
 const styles = StyleSheet.create({
   container: {
+    borderRadius:15,
     width:width,
     height:height,
     display:"flex",
     justifyContent: "center",
     alignItems:"stretch",
     textAlign:"center", 
-    backgroundColor: 'white',
+    backgroundColor: "#E8EEEF",
   },
+
   containerImg: {
-   marginBottom:20,
+    marginTop:"15%",
+    borderRadius:20,
     width:"100%",
-    height:"30%",
+    height:"50%",
     display:"flex",
     justifyContent: "center",
 
@@ -176,20 +178,25 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   container2: {
-    
-    width:"100%",
-    height:"65%",
+    marginTop:"10%",
+    marginBottom:"5%",
+    borderRadius:15,
+    width:"95%",
+    height:"35%",
     display:"flex",
+    alignSelf:"center",
     justifyContent: "center",
     alignItems:"center",
     textAlign:"center", 
     backgroundColor: 'white',
   },
   container3: {
-
+    padding:10,
+    borderRadius:15,
+    marginTop:"5%",
     alignSelf:"center",
-    width:"100%",
-    height:"20%",
+    width:"95%",
+    height:"25%",
     display:"flex",
     justifyContent: "center",
     alignItems:"center",
@@ -205,25 +212,25 @@ const styles = StyleSheet.create({
     alignItems:"center",
     textAlign:"center",
     fontSize:20,
-    width:"99%",
-    height: "55%",
+    width:"90%",
+    height: "30%",
     borderColor: 'gray',
     borderWidth: 1,
     padding: 8,
   },
   button: {
     marginTop:"10%",
-    borderRadius:8,
+    borderRadius:15,
     marginBottom:"20%",
     alignSelf:"center",
     textAlignVertical:"center",
-    width:"99%",
+    width:"80%",
     height:"9%",
     borderColor: 'dark-blue',
     alignItems: 'center',
     justifyContent: 'center',
     elevation: 10,
-    backgroundColor: '#0E347B',
+    backgroundColor: '#176A87',
   },
   textButton: {
     fontSize: 20,
@@ -252,7 +259,6 @@ const styles = StyleSheet.create({
     fontSize:18,  
   },
   resultInfo:{
-    paddingTop:"50%",
     color:"black",
     fontWeight:"800",
     alignSelf:"center",
@@ -260,12 +266,10 @@ const styles = StyleSheet.create({
   },
   containerInfo: {
     paddingTop:"5%",
-    paddingLeft: "30%",
-    paddingRight: "30%",
-   
+    backgroundColor:"white",
     width:"100%",
-    height:"40%",
-    
+    height:"30%",
+    borderRadius:20,
   },
   imageImc:{
     alignSelf:'center',
